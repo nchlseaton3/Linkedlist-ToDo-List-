@@ -140,42 +140,41 @@ class ToDoList:
 
 # Step 4 Test Function 
 
-    def test_todo_list():
-        """Verify ToDoList functionality"""
-        print("=== Testing To-Do List Implementation ===\n")
+def test_todo_list():
+    """Verify ToDoList functionality"""
+    print("=== Testing To-Do List Implementation ===\n")
 
-        todo = ToDoList("School Tasks")
+    todo = ToDoList("School Tasks")
 
-    # Add tasks
-        print("1. Adding tasks...")
-        todo.add_task("Study for math exam")
-        todo.add_task("Write history essay")
-        todo.add_task("Submit science project")
-        todo.add_task("Read chapter 5")
+    print("1. Adding tasks...")
+    todo.add_task("Study for math exam")
+    todo.add_task("Write history essay")
+    todo.add_task("Submit science project")
+    todo.add_task("Read chapter 5")
 
-    # View all
-        print("\n2. Viewing all tasks:")
-        todo.view_all_tasks()
+    print("\n2. Viewing all tasks:")
+    todo.view_all_tasks()
 
-    # Complete tasks
-        print("\n3. Completing some tasks...")
-        todo.complete_task(2)
-        todo.complete_task(4)
+    print("\n3. Completing some tasks...")
+    todo.complete_task(2)
+    todo.complete_task(4)
 
-    # View after completion
-        print("\n4. Viewing tasks after completion:")
-        todo.view_all_tasks()
+    print("\n4. Viewing tasks after completion:")
+    todo.view_all_tasks()
 
-    # Remove task
-        print("\n5. Removing a task...")
-        todo.remove_task(3)
-        todo.view_all_tasks()
+    print("\n5. Removing a task...")
+    todo.remove_task(3)
+    todo.view_all_tasks()
 
-    # Edge cases
-        print("\n6. Testing edge cases...")
-        print("Trying to complete invalid position:")
-        print(f"Result: {todo.complete_task(10)}")
-        print("Trying to remove invalid position:")
-        print(f"Result: {todo.remove_task(0)}")
+    print("\n6. Testing edge cases...")
+    print("Trying to complete invalid position:")
+    print(f"Result: {todo.complete_task(10)}")
+    print("Trying to remove invalid position:")
+    print(f"Result: {todo.remove_task(0)}")
 
-        print("\n=== Test completed! ===")
+    print("\n=== Test completed! ===")
+
+
+# Step 5 Run test 
+
+ 
