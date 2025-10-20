@@ -177,4 +177,5 @@ def test_todo_list():
 
 # Step 5 Run test 
 
- 
+if __name__ == "__main__":
+    test_todo_list() 
