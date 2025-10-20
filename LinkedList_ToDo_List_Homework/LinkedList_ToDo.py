@@ -1,4 +1,4 @@
-# Create task class
+# Step 1 Create task class
 
 class Task:
     def __init__(self, name):
@@ -9,7 +9,7 @@ class Task:
         return f"{self.name} - {self.complete.capitalize()}"
 
 
-#  Node and LinkedList
+# Step 2 Node and LinkedList
 
 class Node:
     def __init__(self, data):
@@ -92,3 +92,51 @@ class LinkedList:
             items.append(current.data)
             current = current.next
         return items
+
+# Step 3 ToDo List
+
+class ToDoList:
+    def __init__(self, list_name="My Tasks"):
+        self.list_name = list_name
+        self.tasks = LinkedList()  # Linked list to store Task objects
+
+    def add_task(self, task_name):
+        """Add a new Task object to the list"""
+        new_task = Task(task_name)
+        self.tasks.append_with_tail(new_task)
+        print(f"Task added: {task_name}")
+
+    def complete_task(self, position):
+        """Mark a task as complete using its position"""
+        task = self.tasks.get_at_position(position)
+        if task:
+            task.complete = "complete"
+            print(f"Task {position} marked complete: {task.name}")
+            return True
+        else:
+            print("Invalid task position.")
+            return False
+
+    def remove_task(self, position):
+        """Remove a task at a given position"""
+        success = self.tasks.delete_at_position(position)
+        if success:
+            print(f"Task {position} removed successfully.")
+            return True
+        else:
+            print("Invalid task position.")
+            return False
+
+    def view_all_tasks(self):
+        """Display all tasks in the to-do list"""
+        print(f"\n{self.list_name}")
+        print("=" * len(self.list_name))
+        all_tasks = self.tasks.as_list()
+        if not all_tasks:
+            print("No tasks found.")
+            return
+        for i, task in enumerate(all_tasks, start=1):
+            print(f"{i}. {task}")
+
+# Step 4 Test Function 
+
